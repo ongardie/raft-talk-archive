@@ -12,9 +12,10 @@
 // OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
 // CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+var childProcess = require('child_process');
+var fs = require('fs');
 var https = require('https');
 var url = require('url');
-var childProcess = require('child_process');
 
 var sourceRepo = 'ongardie/raft-talk';
 
@@ -49,11 +50,15 @@ var getTagList = function(callback) {
 };
 
 getTagList(function(tagList) {
+  var index = [];
   tagList.forEach(function(tag) {
     var name = tag.ref.slice('refs/tags/'.length);
     console.log(name);
     system('git', ['submodule', 'add', 'https://github.com/' + sourceRepo + '.git', name]);
+    index.push('<a href="' + name + '">' + name + '</a>');
   });
   system('git', ['submodule', 'foreach', 'git checkout $path']);
+  index.push('');
+  fs.writeFileSync('index.html', index.join('<br />\n'));
   system('git', ['commit', '-a', '-m', 'Update submodules']);
 });
