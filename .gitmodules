@@ -1,3 +1,6 @@
 [submodule "2015/buildstuff"]
 	path = 2015/buildstuff
 	url = https://github.com/ongardie/raft-talk.git
+[submodule "2017/ucsc"]
+	path = 2017/ucsc
+	url = https://github.com/ongardie/raft-talk.git
