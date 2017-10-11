@@ -4,3 +4,6 @@
 [submodule "2017/ucsc"]
 	path = 2017/ucsc
 	url = https://github.com/ongardie/raft-talk.git
+[submodule "2017/stanford"]
+	path = 2017/stanford
+	url = https://github.com/ongardie/raft-talk.git
