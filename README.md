@@ -1,3 +1,3 @@
 # raft-talk-archive
-Snapshots of prior raft-talk talks.
+Snapshots of prior Raft talks.
 See https://ongardie.github.io/raft-talk-archive/
